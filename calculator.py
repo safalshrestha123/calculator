@@ -1,4 +1,5 @@
 from tkinter import *
+
 def btnClick(numbers):
    global operator
    operator=operator + str(numbers)
@@ -17,15 +18,16 @@ def btnEquallInput():
 
 window=Tk()
 window.title('Calculator')
-#window.geometry('400x500')
+#window.geometry('1000x500')
 operator=''
 text_ip=StringVar()
 
-#adding pic and heading
+#Adding pic and Heading
 pic=PhotoImage(file="img/cal1.png")
 #heading1=Label(window,text="Calculator",font=("arial",40,'bold'),bg="orange").grid(row=0, column=1)
 heading2=Label(window,image=pic).grid(row=0,column=0)
 heading3=Label(window,image=pic).grid(row=0,column=3)
+heading3=(Label(window,text="Calculator",font=('arial',15,'bold'))).grid(row=0,column=2)
 
 #adding text display
 txtDisplay=Entry( window,font=('large,_font',24,'bold'),justify='right',textvariable=text_ip,
@@ -43,7 +45,7 @@ btn9=Button(window,text='9',padx=15,pady=10,bd=5,fg="black",font=('arial',20,'bo
 
 divbtn=Button(window,text='/',padx=15,pady=10,bd=5,fg="black",font=('arial',20,'bold'),bg='powder blue'
               ,command=lambda:btnClick("/")).grid(row=2,column=3)
-#=============================================================================================================
+
 
 btn4=Button(window,text='4',padx=10,pady=10,bd=8,fg="black",font=('arial',20,'bold'),command=lambda:btnClick(4)
             ,bg='powder blue').grid(row=3,column=0)
@@ -57,7 +59,6 @@ btn6=Button(window,text='6',padx=10,pady=10,bd=8,fg="black",font=('arial',20,'bo
 subbtn=Button(window,text='-',padx=10,pady=10,bd=8,fg="black",font=('arial',20,'bold'),bg='powder blue'
               ,command=lambda:btnClick('-')).grid(row=3,column=3)
 
-#==================================================================================================================
 
 btn1=Button(window,text='1',padx=10,pady=10,bd=8,fg="black",font=('arial',20,'bold')
             ,command=lambda:btnClick(1),bg='powder blue').grid(row=4,column=0)
@@ -71,7 +72,6 @@ btn3=Button(window,text='3',padx=10,pady=10,bd=8,fg="black",font=('arial',20,'bo
 multn=Button(window,text='*',padx=10,pady=10,bd=8,fg="black",font=('arial',20,'bold'),bg='powder blue'
              ,command=lambda:btnClick("*")).grid(row=4,column=3)
 
-#======================================================================================================================
 
 btn0=Button(window,text='0',padx=10,pady=10,bd=8,fg="black",font=('arial',20,'bold')
             ,command=lambda:btnClick(0),bg='powder blue').grid(row=5,column=0)
@@ -89,5 +89,3 @@ addbtn=Button(window,text='+',padx=10,pady=10,bd=8,fg="black",font=('arial',20,'
 
 window.mainloop()
 
-
-root.mainloop()
